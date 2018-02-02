@@ -13,7 +13,7 @@ module.exports = {
     devtool: "inline-source-map",
     devServer: {
         contentBase: './dist',
-        hot: true
+        hot: true,
     },
     module: {
         loaders: [{
@@ -26,6 +26,13 @@ module.exports = {
                         presets: ['react', 'es2015']
                     }
                 }
+            ]
+        },{
+            test: /\.scss$/,
+            exclude: /node_modules/,
+            loader: [
+                'style-loader',
+                'css-loader',
             ]
         }]
     },
